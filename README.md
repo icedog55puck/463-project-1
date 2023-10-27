@@ -1,4 +1,4 @@
-Here is the text file contents formatted in Markdown:
+
 
 # 463 project 1: a look into the joining of 2 algorithm
 For My project I chose to use a hybrid sort the combined the speeds of merge and quick sort. My goal was to make a sort that on average was faster then the sorts by themselves. My goal was to make a sort algorithm that was able to cover the weakness of its two parts and would try to keep a comparable or faster speed then its two parts.
