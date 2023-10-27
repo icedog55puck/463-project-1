@@ -49,7 +49,7 @@ def hybrid_sort(arr):
         return merge_sort(arr)
 
 def generate_an_array(size):
-    return [random.randint(1, 10000) for _ in range(size)]
+    return [random.randint(1, 1000) for _ in range(size)]
 
 def find_TimeMemory(sort_func, arr):
     start_time = time.time()
@@ -58,6 +58,22 @@ def find_TimeMemory(sort_func, arr):
     memory_usage = sys.getsizeof(arr)
 
     return end_time - start_time, memory_usage
+
+def test_sorting_algorithm(sort_func):
+    # Test with an empty list
+    input_data = []
+    expected_output = []
+    assert sort_func(input_data) == expected_output
+
+    # Test with a small input
+    input_data = [3, 1, 2]
+    expected_output = [1, 2, 3]
+    assert sort_func(input_data) == expected_output
+
+    # Test with a large input
+    input_data = [10, 7, 8, 3, 12, 5, 20, 15, 6, 9]
+    expected_output = [3, 5, 6, 7, 8, 9, 10, 12, 15, 20]
+    assert sort_func(input_data) == expected_output
 
 if __name__ == "__main__":
     array_size = 1000  # Adjust the size of the array as needed
@@ -75,3 +91,11 @@ if __name__ == "__main__":
     print(f"Hybrid Sort - Time: {hybrid_time:.6f} seconds, Memory: {hybrid_memory} bytes")
     print(f"Merge Sort - Time: {merge_time:.6f} seconds, Memory: {merge_memory} bytes")
     print(f"Quick Sort - Time: {quick_time:.6f} seconds, Memory: {quick_memory} bytes")
+
+    test_sorting_algorithm(hybrid_sort)
+    test_sorting_algorithm(merge_sort)
+    test_sorting_algorithm(quick_sort)
+
+    print("All tests passed.")
+
+
